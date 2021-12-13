@@ -1,0 +1,50 @@
+spring.jmx:
+   enabled: false
+
+spring.datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:productdb;MODE=MySQL
+
+server:
+  port: 8090
+
+security:
+  basic:
+    enabled: false
+
+#management endpoints on a separate port
+management:
+  port: 8091
+  security:
+    enabled: false
+
+#default project info followed by actual injected pom-specified values.
+project:
+  name: telenor-product
+  version: 0.1
+  description: product Api
+info:
+  build:
+    artifact: @project.artifactId@
+    name: @project.name@
+    description: @project.description@
+    version: @project.version@
+
+product.service:
+  name: 'default profile:'
+---
+spring:
+  profiles: test
+  h2:
+    console:
+      enabled: true
+
+spring.jpa:
+    hibernate.ddl-auto: create-drop
+
+product.service:
+  name: 'test profile:'
+
+logging:
+  file: productfilter.log
+  org.hibernate: INFO
