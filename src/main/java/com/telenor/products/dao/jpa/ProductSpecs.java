@@ -69,10 +69,12 @@ public class ProductSpecs {
     }
 
     private static Specification<Product> getProductsByPropertyGbLimitMin(String propertyGbLimitMin) {
-        return (root, criteriaQuery, cb) -> cb.greaterThanOrEqualTo(root.get("propertyGbLimit"), propertyGbLimitMin);
+        Integer min = Integer.valueOf(propertyGbLimitMin);
+        return (root, criteriaQuery, cb) -> cb.greaterThanOrEqualTo(root.get("propertyGbLimit"), min);
     }
 
     private static Specification<Product> getProductsByPropertyGbLimitMax(String propertyGbLimitMax) {
-        return (root, criteriaQuery, cb) -> cb.lessThanOrEqualTo(root.get("propertyGbLimit"), propertyGbLimitMax);
+        Integer max = Integer.valueOf(propertyGbLimitMax);
+        return (root, criteriaQuery, cb) -> cb.lessThanOrEqualTo(root.get("propertyGbLimit"), max);
     }
 }

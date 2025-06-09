@@ -28,7 +28,7 @@ public class Product {
     private String propertyColor;
 
     @Column()
-    private String propertyGbLimit;
+    private Integer propertyGbLimit;
 
     @Column()
     String storeAddress;
@@ -93,11 +93,11 @@ public class Product {
         this.propertyColor = propertyColor;
     }
 
-    public String getPropertyGbLimit() {
+    public Integer getPropertyGbLimit() {
         return propertyGbLimit;
     }
 
-    public void setPropertyGbLimit(String propertyGbLimit) {
+    public void setPropertyGbLimit(Integer propertyGbLimit) {
         this.propertyGbLimit = propertyGbLimit;
     }
 
