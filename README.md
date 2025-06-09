@@ -57,7 +57,7 @@ See last step on Dockerfile:
         CMD ["java", "-jar", "-Dspring.profiles.active=test", "/opt/spring-boot-rest/target/telenor-product.jar"]
 
 ```
-This image will run the projet with test profile. 
+This image will run the project with test profile. 
 
 ## How to run this image with Docker
 
