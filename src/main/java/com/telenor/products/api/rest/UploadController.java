@@ -53,7 +53,8 @@ public class UploadController extends AbstractRestHandler {
                         product.setPropertyColor(productProperties.split(":")[1]);
                     } else if (productProperties.toLowerCase(Locale.ROOT).contains("gb_limit")) {
                         product.setProductProperty("gb_limit");
-                        product.setPropertyGbLimit(productProperties.split(":")[1]);
+                        String value = productProperties.split(":")[1];
+                        product.setPropertyGbLimit(Integer.valueOf(value));
                     }
                 }
                 product.setPrice(record.getDouble("Price").intValue());
