@@ -13,7 +13,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
 @Configuration
-@EnableAutoConfiguration  // Sprint Boot Auto Configuration
+@EnableAutoConfiguration  // Spring Boot Auto Configuration
 @ComponentScan(basePackages = "com.telenor.products")
 @EnableJpaRepositories("com.telenor.products.dao.jpa")
 public class Application {
